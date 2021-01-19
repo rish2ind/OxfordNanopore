@@ -1,0 +1,60 @@
+<template>
+    <lightning-card>
+
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+            <thead>
+              <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Name">Name</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="entity_id">entity_id</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="type_id">type_id</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="sku">sku</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="price">price</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="price"></div>
+                  </th>
+              </tr>
+            </thead>
+            <tbody>
+                <template for:each={testing} for:item="test" for:index="index">
+                    <tr class="slds-hint-parent" key={test.Id}>
+                        <th data-label="Opportunity Name" scope="row">
+                          <div class="slds-truncate" title="Cloudhub">
+                            <a href="javascript:void(0);" tabindex="-1">{test.name}</a>
+                          </div>
+                        </th>
+                        <td data-label="Account Name">
+                          <div class="slds-truncate" title="Cloudhub">{test.entity_id}</div>
+                        </td>
+                        <td data-label="Close Date">
+                          <div class="slds-truncate" title="4/14/2015">{test.type_id}</div>
+                        </td>
+                        <td data-label="Prospecting">
+                          <div class="slds-truncate" title="Prospecting">{test.sku}</div>
+                        </td>
+                        <td data-label="Confidence">
+                          <div class="slds-truncate" title="20%">{test.price}</div>
+                        </td>
+                        <td data-label="Confidence">
+                            <div class="slds-truncate"><lightning-button class = "add" name={index} label="Add" variant="brand" data-id={index} onclick={handleClick}></lightning-button></div>
+                            <div class="slds-truncate"><lightning-button class="remove" name={index} label="Remove" variant="destructive" data-id={index} onclick={handleClick}></lightning-button></div>
+                        </td>
+                      </tr>
+                </template>
+              
+              
+            </tbody>
+          </table> 
+
+    </lightning-card>
+   
+</template>
